@@ -57,6 +57,8 @@ const creatingCharCodesArray = function(includeVariable, array, charCodeType) {
 
 
 
+
+
 // creating a function that randomly generates a password based off certain conditions
 // TO RANDOMLY GENERATE A WORD, YOU MUST FIRST RANDOMLY GENERATE A CHARACTER, AND YOU ONLY KNOW HOW TO RANDOMLY GENERATE A NUMBER. THANKFULLY, THERE IS A BUILT IN METHOD CALLED fromCharCode() that converts any number into a corresponding character
 // THIS IS HOW YOU COME UP WITH RANDOM PHRASES AND WORDS
@@ -66,11 +68,11 @@ const generatePassword = function() {
   // ask user how many characters they want in their generated password
   let characterNumber = Number(prompt('How many characters long would you like your password to be? Choose between 8 to 128.'));
 
-  // if the user doesn't type a number between 8 and 128, repeat the prompt until they do, keep redefining characterNumber
-  while(characterNumber < 8 || characterNumber > 128) {
-    characterNumber = Number(prompt('The number you chose was not between 8 and 128, type again how many characters you would like in your password.'));
+
+  // if the user doesn't type a number between 8 and 128, or doesn't type a number at all, repeat the prompt until they do, keep redefining characterNumber
+  while(characterNumber < 8 || characterNumber > 128 || isNaN(characterNumber)) {
+    characterNumber = Number(prompt("What you wrote was not between 8 and 128 or it wasn't a number at all. Type again how many characters long you want your password to be."));
   }
-  // fix bug here where user might write something that isn't a number
 
 
 
@@ -123,35 +125,41 @@ const generatePassword = function() {
       redefineIncludedChar = prompt("You did not choose a valid letter. Type 'l' for lowercase, 'u' for uppercase, 'n' for numbers, 's' for symbols.")
     }
 
-    // need to add code here, completely forgot about this part of the code
-
+    // change user data based off redefineIncludedChar input
+    if(redefineIncludedChar == 'l') {
+      includeLowercase = 'y';
+    } else if(redefineIncludedChar == 'u') {
+      includeUppercase = 'y';
+    } else if(redefineIncludedChar == 'n') {
+      includeNumbers = 'y';
+    } else if(redefineIncludedChar == 's') {
+      includeSymbols = 'y';
+    }
+    
   }
+
+
 
 
 
   // converting 'y' and 'n' to true and false
   includeLowercase = convertingYandN(includeLowercase);
-  
   includeUppercase = convertingYandN(includeUppercase);
-
   includeNumbers = convertingYandN(includeNumbers);
-
   includeSymbols = convertingYandN(includeSymbols);
 
 
 
 
-  
+
   // creating an array of all the character options depending on the choices made by user
   let charCodes = [];
 
   charCodes = creatingCharCodesArray(includeLowercase, charCodes, lowercaseCharCodes);
-  
   charCodes = creatingCharCodesArray(includeUppercase, charCodes, uppercaseCharCodes);
-
   charCodes = creatingCharCodesArray(includeNumbers, charCodes, numberCharCodes);
-
   charCodes = creatingCharCodesArray(includeSymbols, charCodes, symbolCharCodes);
+
 
 
 
