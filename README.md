@@ -16,4 +16,4 @@ This application generates a random password for a user. Once a user clicks the 
 
 
 ## Link to deployed application
-https://ishan-wijesingha99.github.io/Challenge-3-Ishan-Wijesingha/
+https://ishan-wijesingha99.github.io/Random-Password-Generator/
