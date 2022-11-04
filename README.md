@@ -1,4 +1,4 @@
-# Challenge-3-Ishan-Wijesingha
+# Random Password Generator
 
 ## Link to deployed application
 https://ishan-wijesingha99.github.io/Random-Password-Generator/
