@@ -8,5 +8,5 @@ This application generates a random password for a user. Once a user clicks the 
 
 ## Screenshot of Application
 ![screenshot-1](./assets/images/screenshot-1.png)
+![screenshot-2](./assets/images/screenshot-2.png)
 ![screenshot-3](./assets/images/screenshot-3.png)
-![screenshot-4](./assets/images/screenshot-4.png)
